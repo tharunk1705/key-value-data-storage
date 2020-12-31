@@ -54,12 +54,12 @@ const createFun = () => {
 
     let key = readLine.question("Enter the Key : ");
     if(key.length > 32) {
-        console.log("length Exceeded");
+        console.log("Length Exceeded");
         return;
     }
 
     if(key in myObj){
-        console.log("Already Exists!");
+        console.log("ALREADY EXIST");
     }else{
         // let value = readLine.question("Enter the Value : ");
         // myObj[key] = value;
