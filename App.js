@@ -77,14 +77,19 @@ const readFun = () => {
 const deleteFun = () => {
     let keyToDelete = readLine.question("Enter the key of the value to delete : ");
     let newObj = {};
-    for (const key in myObj){
-        if( key != keyToDelete){
-            newObj[key] = myObj[key];
+    if(keyToDelete in myObj) {
+        for (const key in myObj){
+            if( key != keyToDelete){
+                newObj[key] = myObj[key];
+            }
         }
+        myObj = newObj;
+        updateStorage();
+        printMyObj();
+    }else{
+        console.log("KEY NOT FOUND");
     }
-    myObj = newObj;
-    updateStorage();
-    printMyObj();
+    
 }
 
 function myFunction() {
